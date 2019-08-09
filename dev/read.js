@@ -8,7 +8,6 @@ var cle = {
     value:'AO001'
 }
 objKeys = cle
-console.log('oi')
 var cliente = {
     codeLang: 'POR',
     poolAlias: 'SEED',

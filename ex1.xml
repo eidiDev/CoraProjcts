@@ -1,6 +1,5 @@
-<![CDATA[<PARAM>
+<PARAM>
 <GRP ID="BPRC_1">
-<FLD NAME="BPRNAM" TYPE="Char">New Name</FLD>
-<FLD NAME="CRY" TYPE="Char">US</FLD>
+<FLD NAME="BPRNAM" TYPE="Char">EIDI</FLD>
 </GRP>
-</PARAM>]]>
+</PARAM>
