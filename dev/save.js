@@ -26,7 +26,7 @@ soap.createClient(url,(err,client) => {
         console.log('ok')
         client.setSecurity(new soap.BasicAuthSecurity('ws','intcorax3'))
        
-        fs.readFile("ex1.xml","utf-8", function(err, data) {
+        fs.readFile("ex2.xml","utf-8", function(err, data) {
             if (err) console.log(err);
           parseString(data, function(err, result) {
               if (err) console.log(err);
@@ -38,13 +38,12 @@ soap.createClient(url,(err,client) => {
     
                 callContext: cliente,
                 publicName: 'BPC',
-                objectKeys: cle,
                 objectXml: xml
             }
                 
-                client.modify(args, function(err,xml){
+                client.save(args, function(err,xml){
                 var build = new xml2js.Builder();
-                var format = build.buildObject(xml.modifyReturn.resultXml);
+                var format = build.buildObject(xml.saveReturn);
                 console.log(format)
             });
           });

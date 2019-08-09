@@ -8,7 +8,7 @@ var cle = {
     value:'AO001'
 }
 objKeys = cle
-console.log('oi')
+
 var cliente = {
     codeLang: 'POR',
     poolAlias: 'SEED',
@@ -18,7 +18,8 @@ var cliente = {
 var args = {
     callContext: cliente,
     publicName: 'BPC', 
-     objectKeys: cle
+     objectKeys: cle,
+     listSize: 10
 }
 soap.createClient(url,(err,client) => {
     if(err){
@@ -26,9 +27,9 @@ soap.createClient(url,(err,client) => {
     }else{
         console.log('ok')
         client.setSecurity(new soap.BasicAuthSecurity('ws','intcorax3'))
-        client.read(args, function(err,result){
+        client.query(args, function(err,result){
         var builder = new xml2js.Builder();
-        var xml = builder.buildObject(result);
+        var xml = builder.buildObject(result.queryReturn.resultXml);
         console.log(xml)
         })        
     }
