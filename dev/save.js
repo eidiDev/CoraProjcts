@@ -16,7 +16,7 @@ var cliente = {
     codeLang: 'POR',
     poolAlias: 'SEED',
     poolId:'',
-    resquestConfig: 'adxwss.trace.on=on&adxwss.trace.size=16384&adonix.trace.on=on&adonix.trace.level=3&adonix.trace.size=8&adxwss.optreturn=JSON'
+    resquestConfig: 'adxwss.trace.on=on&adxwss.trace.size=16384&adonix.trace.on=on&adonix.trace.level=3&adonix.trace.size=8&adxwss.optreturn=XML'
 }
 
 soap.createClient(url,(err,client) => {
@@ -26,7 +26,7 @@ soap.createClient(url,(err,client) => {
         console.log('ok')
         client.setSecurity(new soap.BasicAuthSecurity('ws','intcorax3'))
        
-        fs.readFile("ex2.xml","utf-8", function(err, data) {
+        fs.readFile("test.xml","utf-8", function(err, data) {
             if (err) console.log(err);
           parseString(data, function(err, result) {
               if (err) console.log(err);
