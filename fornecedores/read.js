@@ -1,11 +1,11 @@
 const soap = require('soap')
 xml2js = require('xml2js')
-const url = 'http://192.168.100.187/soap-wsdl/syracuse/collaboration/syracuse/CAdxWebServiceXmlCC?wsdl'
-
+//const url = 'http://192.168.100.187/soap-wsdl/syracuse/collaboration/syracuse/CAdxWebServiceXmlCC?wsdl'
+const url = 'http://corax12.ngrok.io/soap-wsdl/syracuse/collaboration/syracuse/CAdxWebServiceXmlCC?wsdl'
 var objKeys  = []
 var cle = {
-    key:'BPCNUM',
-    value:'AO001'
+    key:'BPSNUM',
+    value:'FR057'
 }
 objKeys = cle
 var cliente = {
@@ -16,9 +16,10 @@ var cliente = {
 }
 var args = {
     callContext: cliente,
-    publicName: 'BPC', 
+    publicName: 'YBPS', 
      objectKeys: cle
 }
+
 soap.createClient(url,(err,client) => {
     if(err){
         console.log(err)

@@ -5,7 +5,7 @@ const url = 'http://192.168.100.187/soap-wsdl/syracuse/collaboration/syracuse/CA
 var objKeys  = []
 var cle = {
     key:'BPCNUM',
-    value:'AO001'
+    value:'BR001'
 }
 objKeys = cle
 
